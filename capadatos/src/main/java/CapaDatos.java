@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CapaDatos {
-    public static void main(String[] args) {
-
+    public String infoUsuario(Usuario usuario){
+        return usuario.toString();
     }
 }
 
