@@ -62,3 +62,60 @@ class Usuario{
     }
 }
 
+class Autor{
+    private String nombreAutor;
+    private String apellidoAutor;
+    private String biografia;
+    private List<String> librosPublicados;
+
+    public Autor(String nombreAutor, String apellidoAutor,
+                 String biografia, List<String> librosPublicados){
+        this.nombreAutor = nombreAutor;
+        this.apellidoAutor = apellidoAutor;
+        this.biografia = biografia;
+        this.librosPublicados = librosPublicados;
+    }
+
+    public String getNombreAutor() {
+        return nombreAutor;
+    }
+
+    public void setNombreAutor(String nombreAutor) {
+        this.nombreAutor = nombreAutor;
+    }
+
+    public String getApellidoAutor() {
+        return apellidoAutor;
+    }
+
+    public void setApellidoAutor(String apellidoAutor) {
+        this.apellidoAutor = apellidoAutor;
+    }
+
+    public String getBiografia() {
+        return biografia;
+    }
+
+    public void setBiografia(String biografia) {
+        this.biografia = biografia;
+    }
+
+    public List<String> getLibrosPublicados() {
+        return librosPublicados;
+    }
+
+    public void setLibrosPublicados(List<String> librosPublicados) {
+        this.librosPublicados = librosPublicados;
+    }
+
+    @Override
+    public String toString() {
+        return "Autor{" +
+                "nombreAutor='" + nombreAutor + '\'' +
+                ", apellidoAutor='" + apellidoAutor + '\'' +
+                ", biografia='" + biografia + '\'' +
+                ", librosPublicados=" + librosPublicados +
+                '}';
+    }
+}
+
