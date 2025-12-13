@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class CapaDatos {
@@ -10,13 +11,13 @@ class Usuario{
     private String nombre;
     private String correo;
     private String password;
-    private List<String> librosprestados;
+    private List<String> librosprestados = new ArrayList<>();
 
-    public Usuario(String nombre, String correo, String password, List<String>librosprestados){
+    public Usuario(String nombre, String correo, String password){
         this.nombre = nombre;
         this.correo = correo;
         this.password = password;
-        this.librosprestados = librosprestados;
+
     }
 
     public String getNombre() {
@@ -66,14 +67,14 @@ class Autor{
     private String nombreAutor;
     private String apellidoAutor;
     private String biografia;
-    private List<String> librosPublicados;
+    private List<String> librosPublicados = new ArrayList<>();
 
     public Autor(String nombreAutor, String apellidoAutor,
-                 String biografia, List<String> librosPublicados){
+                 String biografia){
         this.nombreAutor = nombreAutor;
         this.apellidoAutor = apellidoAutor;
         this.biografia = biografia;
-        this.librosPublicados = librosPublicados;
+
     }
 
     public String getNombreAutor() {
@@ -172,6 +173,51 @@ class Libro{
                 ", anioPublicacion=" + anioPublicacion +
                 ", ISBN=" + ISBN +
                 '}';
+    }
+}
+
+class Biblioteca{
+    private List<Libro> libros = new ArrayList<>();
+    private List<Autor> autores = new ArrayList<>();
+    private List<Usuario> usuarios = new ArrayList<>();
+
+    //metodos para agregar
+    public void agregarLibro(Libro libro){
+        libros.add(libro);
+    }
+
+    public void agregarAutor(Autor autor){
+        autores.add(autor);
+    }
+
+    public void agregarUsuario(Usuario usuario){
+        usuarios.add(usuario);
+    }
+
+    //Metodos para eliminar
+    public void eliminarLibro(Libro libro){
+        libros.remove(libro);
+    }
+
+    public void eliminarUsuario(Usuario usuario){
+        usuarios.remove(usuario);
+    }
+
+    public void eliminarAutor(Autor autor){
+        autores.remove(autor);
+    }
+
+    //metodos para modificar
+    public Libro modificarLibro(Libro libro){
+        return libros.set(libros.indexOf(libro), libro ); //validar si el indice existe
+    }
+
+    public Autor modificarAutor(Autor autor){
+        return autores.set(autores.indexOf(autor), autor);
+    }
+
+    public Usuario modificarUsuario(Usuario usuario){
+        return usuarios.set(usuarios.indexOf(usuario), usuario );
     }
 }
 
