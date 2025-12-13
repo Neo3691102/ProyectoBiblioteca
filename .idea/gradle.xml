@@ -21,6 +21,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/aplicacion" />
+            <option value="$PROJECT_DIR$/capadatos" />
+            <option value="$PROJECT_DIR$/capanegocio" />
             <option value="$PROJECT_DIR$/gradle/plugins" />
             <option value="$PROJECT_DIR$/gradle/plugins/java-plugins" />
           </set>
