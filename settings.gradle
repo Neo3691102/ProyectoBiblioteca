@@ -13,5 +13,6 @@ dependencyResolutionManagement{
 rootProject.name = 'ProyectoBiblioteca'
 
 include('aplicacion')
-
+include 'capadatos'
+include 'capanegocio'
 
