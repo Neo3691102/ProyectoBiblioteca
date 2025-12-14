@@ -1,14 +1,13 @@
 plugins{
-    id 'java'
-    id 'application'
+    id 'pluginapp'
 }
 
 application {
-    mainClass = 'Library'
+    mainClass = 'aplicacion.Library'
 }
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(11)
-    }
+dependencies{
+    implementation project(':capanegocio')
+    implementation project(':capadatos')
+
 }
