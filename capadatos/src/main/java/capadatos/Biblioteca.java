@@ -9,22 +9,16 @@ public class Biblioteca{
     private final List<Usuario> usuarios = new ArrayList<>();
 
     //metodos para imprimir en consola las listas
-    public void getUsers(){
-        usuarios.forEach(u -> {
-            System.out.println(u);
-        });
+    public List<Usuario> getUsers() {
+        return usuarios;
     }
 
-    public void getAuthors(){
-        autores.forEach(a -> {
-            System.out.println(a);
-        });
+    public List<Autor> getAuthors(){
+        return autores;
     }
 
-    public void getBooks(){
-        libros.forEach(l -> {
-            System.out.println(l);
-        });
+    public List<Libro> getBooks(){
+        return libros;
     }
 
     //metodos para agregar
