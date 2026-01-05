@@ -2,12 +2,20 @@ package aplicacion;
 
 import capadatos.*;
 import capanegocio.CapaNegocio;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+
 
 import java.util.List;
 import java.util.stream.Stream;
 
 public class Library {
     public static void main(String[] args) {
+
+        EntityManagerFactory entityManagerFactory =
+                Persistence.createEntityManagerFactory("coneccionLocalMySQL");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         System.out.println("---------Bienvenido a la biblioteca---------");
 
@@ -63,7 +71,8 @@ public class Library {
         //Creacion de stream de libros
         Stream<Libro> sL = b.getBooks().stream();
         System.out.println("------------------------------"); //Filtro de un libro por autor
-        sL.filter(l -> l.getAutor().equalsIgnoreCase("Carl Jung")).forEach(l -> {
+        sL.filter(l -> l.getAutor()
+                .equalsIgnoreCase("Carl Jung")).forEach(l -> {
             System.out.println(l);
         });
         System.out.println("------------------------------");
@@ -91,7 +100,8 @@ public class Library {
 
         try {
                     modU
-                    .filter(u -> u.getCorreo().equalsIgnoreCase("Juan@mail.com"))
+                    .filter(u -> u.getCorreo()
+                            .equalsIgnoreCase("Juan@mail.com"))
                     .findFirst()
                     .orElseThrow(() -> new MiExcepcion("Usuario no encontrado"))
                     .setNombre("Juan Perez");
