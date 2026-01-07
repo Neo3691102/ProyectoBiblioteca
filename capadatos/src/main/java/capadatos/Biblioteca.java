@@ -6,11 +6,11 @@ import java.util.List;
 public class Biblioteca{
     private final List<Libro> libros = new ArrayList<>();
     private final List<Autor> autores = new ArrayList<>();
-    private final List<Usuario> usuarios = new ArrayList<>();
+    private final List<UsuarioEjemplo> usuarioEjemplos = new ArrayList<>();
 
     //metodos para imprimir en consola las listas
-    public List<Usuario> getUsers() {
-        return usuarios;
+    public List<UsuarioEjemplo> getUsers() {
+        return usuarioEjemplos;
     }
 
     public List<Autor> getAuthors(){
@@ -30,8 +30,8 @@ public class Biblioteca{
         autores.add(autor);
     }
 
-    public void agregarUsuario(Usuario usuario){
-        usuarios.add(usuario);
+    public void agregarUsuario(UsuarioEjemplo usuarioEjemplo){
+        usuarioEjemplos.add(usuarioEjemplo);
     }
 
     //Metodos para eliminar
@@ -39,8 +39,8 @@ public class Biblioteca{
         libros.remove(libro);
     }
 
-    public void eliminarUsuario(Usuario usuario){
-        usuarios.remove(usuario);
+    public void eliminarUsuario(UsuarioEjemplo usuarioEjemplo){
+        usuarioEjemplos.remove(usuarioEjemplo);
     }
 
     public void eliminarAutor(Autor autor){
@@ -56,7 +56,7 @@ public class Biblioteca{
         return autores.set(autores.indexOf(autor), autor);
     }
 
-    public Usuario modificarUsuario(Usuario usuario){
-        return usuarios.set(usuarios.indexOf(usuario), usuario );
+    public UsuarioEjemplo modificarUsuario(UsuarioEjemplo usuarioEjemplo){
+        return usuarioEjemplos.set(usuarioEjemplos.indexOf(usuarioEjemplo), usuarioEjemplo);
     }
 }

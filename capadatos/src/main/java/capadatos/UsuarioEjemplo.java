@@ -3,13 +3,13 @@ package capadatos;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Usuario{
+public class UsuarioEjemplo {
     private String nombre;
     private String correo;
     private String password;
     private List<String> librosprestados = new ArrayList<>();
 
-    public Usuario(String nombre, String correo, String password){
+    public UsuarioEjemplo(String nombre, String correo, String password){
         this.nombre = nombre;
         this.correo = correo;
         this.password = password;

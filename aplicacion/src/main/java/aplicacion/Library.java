@@ -14,30 +14,13 @@ import java.util.stream.Stream;
 
 public class Library {
     public static void main(String[] args) {
-
-        EntityManagerFactory emf =
-                Persistence.createEntityManagerFactory("coneccionLocalMySQL");
-        EntityManager em = emf.createEntityManager();
-
-
-        UsuarioModel um = new UsuarioModel(em);
-
-        Usuario u = new Usuario();
-        u.setNombre("Judith");
-        u.setCorreo("J@mail.com");
-        u.setPassword("123");
-        um.guardar(u);
-
-
-        em.close();
-        emf.close();
-
-
-
-
-
         System.out.println("---------Bienvenido a la biblioteca---------");
-
+        Usuario usuario = new Usuario();
+        usuario.setNombre("Judith Marquez");
+        usuario.setCorreo("JM@mail.com");
+        usuario.setPassword("369");
+        CapaNegocio cn = new CapaNegocio();
+        cn.guardarUsuarioCN(usuario);
 
 
         //Creacion de usuario
