@@ -3,6 +3,8 @@ package aplicacion;
 import capadatos.dtoEntidades.Usuario;
 import capanegocio.CapaNegocio;
 
+import java.util.List;
+
 
 public class Library {
     public static void main(String[] args) {
@@ -14,6 +16,11 @@ public class Library {
         CapaNegocio cn = new CapaNegocio();
         cn.guardarUsuarioCN(usuario);
 
+
+        System.out.println("-------Lista de usuarios------");
+        List<Usuario> listadeusuarios =  cn.listarUsuariosCN();
+        listadeusuarios.forEach(user -> System.out.println(user));
+        System.out.println("-----------------------------------");
 
         //Creacion de usuario
 //        Usuario u1 = new Usuario("Nestor", "n@mail.com", "123");
