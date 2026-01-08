@@ -1,16 +1,8 @@
 package aplicacion;
 
-import capadatos.*;
 import capadatos.dtoEntidades.Usuario;
-import capadatos.model.UsuarioModel;
 import capanegocio.CapaNegocio;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
 
-
-import java.util.List;
-import java.util.stream.Stream;
 
 public class Library {
     public static void main(String[] args) {
