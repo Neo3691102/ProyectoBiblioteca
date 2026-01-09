@@ -1,79 +1,62 @@
 package capadatos;
 
-
+import capadatos.JPA.conexionJPA;
 import capadatos.dtoEntidades.Usuario;
 import capadatos.model.UsuarioModel;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
 
 import java.util.List;
 
 public class CapaDatos {
-    public String infoUsuario(UsuarioEjemplo usuarioEjemplo){
-        return usuarioEjemplo.toString();
-    }
 
-    public List<Usuario> listarUsuariosCD(){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("coneccionLocalMySQL");
-        EntityManager em = emf.createEntityManager();
-
+    public List<Usuario> listarUsuariosCD() {
+        EntityManager em = conexionJPA.getEntityManager();
         UsuarioModel um = new UsuarioModel(em);
 
-        return um.listarUsuarios();
+        List<Usuario> usuarios = um.listarUsuarios();
+
+        em.close();
+        return usuarios;
     }
 
-    public Usuario obtenerPorIdCD(int id){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("coneccionLocalMySQL");
-        EntityManager em = emf.createEntityManager();
-
+    public Usuario obtenerPorIdCD(int id) {
+        EntityManager em = conexionJPA.getEntityManager();
         UsuarioModel um = new UsuarioModel(em);
 
-        return um.obtenerporId(id);
+        Usuario usuario = um.obtenerporId(id);
+
+        em.close();
+        return usuario;
     }
 
-    public void guardarUsuarioCD(Usuario usuario){
-        EntityManagerFactory emf =
-                Persistence.createEntityManagerFactory("coneccionLocalMySQL");
-        EntityManager em = emf.createEntityManager();
-
-
+    public void guardarUsuarioCD(Usuario usuario) {
+        EntityManager em = conexionJPA.getEntityManager();
         UsuarioModel um = new UsuarioModel(em);
-
 
         um.guardar(usuario);
 
-
         em.close();
-        emf.close();
-
     }
 
-    public void actualizarusuarioCD(Usuario usuario){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("coneccionLocalMySQL");
-        EntityManager em = emf.createEntityManager();
-
+    public void actualizarusuarioCD(Usuario usuario) {
+        EntityManager em = conexionJPA.getEntityManager();
         UsuarioModel um = new UsuarioModel(em);
 
         um.actualizar(usuario);
 
         em.close();
-        emf.close();
     }
 
-    public void eliminarUsuarioCD(int id){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("coneccionLocalMySQL");
-        EntityManager em = emf.createEntityManager();
-
+    public void eliminarUsuarioCD(int id) {
+        EntityManager em = conexionJPA.getEntityManager();
         UsuarioModel um = new UsuarioModel(em);
 
         um.eliminarPorId(id);
 
         em.close();
-        emf.close();
     }
-
 }
+
 
 
 
