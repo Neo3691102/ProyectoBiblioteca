@@ -7,10 +7,7 @@ import capadatos.dtoEntidades.Usuario;
 import java.util.List;
 
 public class CapaNegocio {
-    public String getUserInfo(UsuarioEjemplo usuarioEjemplo){
-        CapaDatos capaDatos = new CapaDatos();
-        return capaDatos.infoUsuario(usuarioEjemplo);
-    }
+
 
     public List<Usuario> listarUsuariosCN(){
         CapaDatos obj = new CapaDatos();
