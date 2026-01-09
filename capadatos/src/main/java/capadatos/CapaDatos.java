@@ -4,6 +4,9 @@ import capadatos.JPA.conexionJPA;
 import capadatos.dtoEntidades.Usuario;
 import capadatos.model.UsuarioModel;
 import jakarta.persistence.EntityManager;
+import capadatos.factory.UsuarioModelFactory;
+import capadatos.model.IUsuarioModel;
+
 
 import java.util.List;
 
@@ -11,7 +14,7 @@ public class CapaDatos {
 
     public List<Usuario> listarUsuariosCD() {
         EntityManager em = conexionJPA.getEntityManager();
-        UsuarioModel um = new UsuarioModel(em);
+        IUsuarioModel um = UsuarioModelFactory.crear(em);
 
         List<Usuario> usuarios = um.listarUsuarios();
 
@@ -19,9 +22,10 @@ public class CapaDatos {
         return usuarios;
     }
 
+
     public Usuario obtenerPorIdCD(int id) {
         EntityManager em = conexionJPA.getEntityManager();
-        UsuarioModel um = new UsuarioModel(em);
+        IUsuarioModel um = UsuarioModelFactory.crear(em);
 
         Usuario usuario = um.obtenerporId(id);
 
@@ -31,7 +35,7 @@ public class CapaDatos {
 
     public void guardarUsuarioCD(Usuario usuario) {
         EntityManager em = conexionJPA.getEntityManager();
-        UsuarioModel um = new UsuarioModel(em);
+        IUsuarioModel um = UsuarioModelFactory.crear(em);
 
         um.guardar(usuario);
 
@@ -40,7 +44,7 @@ public class CapaDatos {
 
     public void actualizarusuarioCD(Usuario usuario) {
         EntityManager em = conexionJPA.getEntityManager();
-        UsuarioModel um = new UsuarioModel(em);
+        IUsuarioModel um = UsuarioModelFactory.crear(em);
 
         um.actualizar(usuario);
 
@@ -49,7 +53,7 @@ public class CapaDatos {
 
     public void eliminarUsuarioCD(int id) {
         EntityManager em = conexionJPA.getEntityManager();
-        UsuarioModel um = new UsuarioModel(em);
+        IUsuarioModel um = UsuarioModelFactory.crear(em);
 
         um.eliminarPorId(id);
 

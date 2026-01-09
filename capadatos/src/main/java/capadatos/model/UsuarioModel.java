@@ -10,7 +10,7 @@ import jakarta.persistence.criteria.Root;
 
 import java.util.List;
 
-public class UsuarioModel {
+public class UsuarioModel implements IUsuarioModel {
 
     private final EntityManager entityManager;
 
@@ -18,7 +18,8 @@ public class UsuarioModel {
         this.entityManager = entityManager;
     }
 
-    public List<Usuario> listarUsuarios(){
+    @Override
+    public List<Usuario> listarUsuarios() {
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<Usuario> cq = cb.createQuery(Usuario.class);
 
@@ -29,11 +30,13 @@ public class UsuarioModel {
         return query.getResultList();
     }
 
-    public Usuario obtenerporId(int id){
+    @Override
+    public Usuario obtenerporId(int id) {
         return entityManager.find(Usuario.class, id);
     }
 
-    public void guardar(Usuario usuario){
+    @Override
+    public void guardar(Usuario usuario) {
         EntityTransaction transaction = entityManager.getTransaction();
 
         try{
@@ -46,7 +49,8 @@ public class UsuarioModel {
         }
     }
 
-    public void actualizar(Usuario usuario){
+    @Override
+    public void actualizar(Usuario usuario) {
         EntityTransaction transaction = entityManager.getTransaction();
 
         try{
@@ -59,7 +63,8 @@ public class UsuarioModel {
         }
     }
 
-    public void eliminarPorId(int id){
+    @Override
+    public void eliminarPorId(int id) {
         EntityTransaction transaction = entityManager.getTransaction();
 
         try {
@@ -76,7 +81,5 @@ public class UsuarioModel {
             e.printStackTrace();
         }
     }
-
-
 
 }
