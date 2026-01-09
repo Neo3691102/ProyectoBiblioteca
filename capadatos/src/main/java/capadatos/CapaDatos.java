@@ -2,9 +2,12 @@ package capadatos;
 
 import capadatos.JPA.conexionJPA;
 import capadatos.dtoEntidades.Autor;
+import capadatos.dtoEntidades.Libro;
 import capadatos.dtoEntidades.Usuario;
 import capadatos.factory.AutorModelFactory;
+import capadatos.factory.LibroModelFactory;
 import capadatos.model.Autor.IAutorModel;
+import capadatos.model.Libro.ILibroModel;
 import jakarta.persistence.EntityManager;
 import capadatos.factory.UsuarioModelFactory;
 import capadatos.model.Usuario.IUsuarioModel;
@@ -106,6 +109,52 @@ public class CapaDatos {
         IAutorModel am = AutorModelFactory.crear(em);
 
         am.eliminarAutorPorId(id);
+        em.close();
+    }
+
+    //METODOS LIBROS
+    public List<Libro> listarLibrosCD(){
+        EntityManager em = conexionJPA.getEntityManager();
+        ILibroModel lm = LibroModelFactory.crear(em);
+
+        List<Libro> libros = lm.listarLibros();
+        em.close();
+
+        return libros;
+    }
+
+    public Libro obtenerLibroPorIdCD(int id){
+        EntityManager em = conexionJPA.getEntityManager();
+        ILibroModel lm = LibroModelFactory.crear(em);
+
+        Libro libro = lm.obtenerLibroPorId(id);
+        em.close();
+
+        return libro;
+
+    }
+
+    public void guardarLibroCD(Libro libro){
+        EntityManager em = conexionJPA.getEntityManager();
+        ILibroModel lm = LibroModelFactory.crear(em);
+
+        lm.guardarLibro(libro);
+        em.close();
+    }
+
+    public void actualizarLibroCD(Libro libro){
+        EntityManager em = conexionJPA.getEntityManager();
+        ILibroModel lm = LibroModelFactory.crear(em);
+
+        lm.actualizarLibro(libro);
+        em.close();
+    }
+
+    public void eliminarLibroPorId(int id){
+        EntityManager em = conexionJPA.getEntityManager();
+        ILibroModel lm = LibroModelFactory.crear(em);
+
+        lm.eliminarLibroporID(id);
         em.close();
     }
 }
