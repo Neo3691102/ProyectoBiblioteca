@@ -18,8 +18,23 @@ public class CapaNegocio {
         return obj.listarUsuariosCD();
     }
 
+    public Usuario obtenerusuarioPorIDCN(int id){
+        CapaDatos obj = new CapaDatos();
+        return obj.obtenerPorIdCD(id);
+    }
+
     public void guardarUsuarioCN(Usuario usuario){
         CapaDatos obj = new CapaDatos();
         obj.guardarUsuarioCD(usuario);
+    }
+
+    public void actualizarUsuarioCN(Usuario usuario){
+        CapaDatos obj = new CapaDatos();
+        obj.actualizarusuarioCD(usuario);
+    }
+
+    public void eliminarUsuarioporIdCN(int id){
+        CapaDatos cd = new CapaDatos();
+        cd.eliminarUsuarioCD(id);
     }
 }

@@ -23,6 +23,15 @@ public class CapaDatos {
         return um.listarUsuarios();
     }
 
+    public Usuario obtenerPorIdCD(int id){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("coneccionLocalMySQL");
+        EntityManager em = emf.createEntityManager();
+
+        UsuarioModel um = new UsuarioModel(em);
+
+        return um.obtenerporId(id);
+    }
+
     public void guardarUsuarioCD(Usuario usuario){
         EntityManagerFactory emf =
                 Persistence.createEntityManagerFactory("coneccionLocalMySQL");
@@ -40,7 +49,29 @@ public class CapaDatos {
 
     }
 
+    public void actualizarusuarioCD(Usuario usuario){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("coneccionLocalMySQL");
+        EntityManager em = emf.createEntityManager();
 
+        UsuarioModel um = new UsuarioModel(em);
+
+        um.actualizar(usuario);
+
+        em.close();
+        emf.close();
+    }
+
+    public void eliminarUsuarioCD(int id){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("coneccionLocalMySQL");
+        EntityManager em = emf.createEntityManager();
+
+        UsuarioModel um = new UsuarioModel(em);
+
+        um.eliminarPorId(id);
+
+        em.close();
+        emf.close();
+    }
 
 }
 
