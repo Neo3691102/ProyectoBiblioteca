@@ -9,18 +9,40 @@ import java.util.List;
 public class Library {
     public static void main(String[] args) {
         System.out.println("---------Bienvenido a la biblioteca---------");
-        Usuario usuario = new Usuario();
-        usuario.setNombre("Judith Marquez");
-        usuario.setCorreo("JM@mail.com");
-        usuario.setPassword("369");
+//        Usuario usuario = new Usuario();
+//        usuario.setNombre("Judith Marquez");
+//        usuario.setCorreo("JM@mail.com");
+//        usuario.setPassword("369");
         CapaNegocio cn = new CapaNegocio();
-        cn.guardarUsuarioCN(usuario);
+//        cn.guardarUsuarioCN(usuario);
 
 
         System.out.println("-------Lista de usuarios------");
         List<Usuario> listadeusuarios =  cn.listarUsuariosCN();
         listadeusuarios.forEach(user -> System.out.println(user));
         System.out.println("-----------------------------------");
+
+        System.out.println("-------------------Usuario por id------------------------");
+        Usuario usuarioid3 = new Usuario();
+        usuarioid3 = cn.obtenerusuarioPorIDCN(3);
+        System.out.println("El usuario con el id#3 -> " + usuarioid3);
+
+
+        System.out.println("-----------------Actualizar usuario------------------------");
+        usuarioid3.setNombre("Abigail");
+        usuarioid3.setPassword("contraseña actualizada!");
+        usuarioid3.setCorreo("Aupdated@mail.com");
+        cn.actualizarUsuarioCN(usuarioid3);
+        System.out.println("Usuario con Id#3 actualizado -> " + cn.obtenerusuarioPorIDCN(3));
+
+        System.out.println("--------------Eliminar usuario-------------------");
+
+
+        cn.eliminarUsuarioporIdCN(2);
+        System.out.println("--------Nueva lista de usuarios-----------");
+        List<Usuario> nuevalistausuarios = cn.listarUsuariosCN();
+        nuevalistausuarios.forEach(u -> System.out.println(u));
+        System.out.println("---------------------------------------------");
 
         //Creacion de usuario
 //        Usuario u1 = new Usuario("Nestor", "n@mail.com", "123");

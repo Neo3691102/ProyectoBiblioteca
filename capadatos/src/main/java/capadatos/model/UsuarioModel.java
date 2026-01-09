@@ -29,6 +29,10 @@ public class UsuarioModel {
         return query.getResultList();
     }
 
+    public Usuario obtenerporId(int id){
+        return entityManager.find(Usuario.class, id);
+    }
+
     public void guardar(Usuario usuario){
         EntityTransaction transaction = entityManager.getTransaction();
 
@@ -41,4 +45,38 @@ public class UsuarioModel {
             transaction.rollback();
         }
     }
+
+    public void actualizar(Usuario usuario){
+        EntityTransaction transaction = entityManager.getTransaction();
+
+        try{
+            transaction.begin();
+            entityManager.merge(usuario);
+            transaction.commit();
+        }catch(Exception e){
+            System.out.println("Ocurrio un error al actualizar el usuario");
+            transaction.rollback();
+        }
+    }
+
+    public void eliminarPorId(int id){
+        EntityTransaction transaction = entityManager.getTransaction();
+
+        try {
+            transaction.begin();
+
+            Usuario usuario = entityManager.find(Usuario.class, id);
+            if (usuario != null) {
+                entityManager.remove(usuario);
+            }
+
+            transaction.commit();
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+        }
+    }
+
+
+
 }
