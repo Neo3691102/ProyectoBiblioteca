@@ -1,5 +1,6 @@
 package aplicacion;
 
+import capadatos.dtoEntidades.Autor;
 import capadatos.dtoEntidades.Usuario;
 import capanegocio.CapaNegocio;
 
@@ -44,100 +45,44 @@ public class Library {
         nuevalistausuarios.forEach(u -> System.out.println(u));
         System.out.println("---------------------------------------------");
 
-        //Creacion de usuario
-//        Usuario u1 = new Usuario("Nestor", "n@mail.com", "123");
-//        Usuario u2 = new Usuario("Juan", "Juan@mail.com", "2333");
-//        CapaNegocio cN = new CapaNegocio();
-//        String usuario = cN.getUserInfo(u1);
-//        System.out.println(usuario);
 
-        //Creacion de Autores
-//        Autor a1 = new Autor("Carl", "Jung",
-//                "Psicoterapeuta estadounidense que se dedico a estudiar la mente humana");
-//        Autor a2 = new Autor("William", "Sheakspeare", "Dramaturgo y poeta inglés");
+        //Creacion de Autor
+//        Autor autor1 = new Autor();
+//        autor1.setNombreAutor("William");
+//        autor1.setApellidoAutor("Shakespeare");
+//        autor1.setBiografia("Dramaturgo, poeta y actor inglés.  " +
+//                "Conocido en ocasiones como el Bardo de Avon, se le considera el escritor más importante " +
+//                "en lengua inglesa y como uno de los más célebres de la literatura universal.");
+//        cn.guardarAutorCN(autor1);
 //
-//        //Creacion de Libros
-//        Libro l1 = new Libro("Romeo y Julieta", "William Shakespeare", 1597, 2255447);
-//        Libro l2 = new Libro("Freud y el psicoanalisis", "Carl Jung", 1906, 5448771);
-//
-//        //Creacion de biblioteca
-//        Biblioteca b = new Biblioteca();
-//        b.agregarUsuario(u1);
-//        b.agregarUsuario(u2);
-//        b.agregarAutor(a1);
-//        b.agregarAutor(a2);
-//        b.agregarLibro(l1);
-//        b.agregarLibro(l2);
-//
-//        //Creacion de stream de usuarios
-//        Stream<Usuario> sU = b.getUsers().stream();
-//        System.out.println("------------------------------");
-//        sU.forEach(u -> {
-//            System.out.println(u);
-//        });
-//        System.out.println("------------------------------");
-//
-//        //Creacion de stream de autores
-//        Stream<Autor> sA = b.getAuthors()
-//                .stream()
-//                .filter(a -> a.getNombreAutor().equalsIgnoreCase("Carl"));
-//
-//        sA.forEach(a -> { //modificacion del nombre del autor
-//            a.setNombreAutor("Carl Gustav");
-//            System.out.println(a);
-//        });
-//
-//
-//
-//        System.out.println("------------------------------");
-//
-//        //Creacion de stream de libros
-//        Stream<Libro> sL = b.getBooks().stream();
-//        System.out.println("------------------------------"); //Filtro de un libro por autor
-//        sL.filter(l -> l.getAutor()
-//                .equalsIgnoreCase("Carl Jung")).forEach(l -> {
-//            System.out.println(l);
-//        });
-//        System.out.println("------------------------------");
-//
-//
-//        //Creacion y eliminacion de un libro de la lista de la biblioteca
-//        Libro l3 = new Libro("Periquillo Sarniento",
-//                "José Fernandez de Lizardi", 1816, 5646634);
-//
-//        b.agregarLibro(l3);
-//
-//        List<Libro> libros = b.getBooks();
-//        libros.forEach(l -> {
-//            System.out.println(l);
-//        });
-//
-//        b.eliminarLibro(l3);
-//
-//        libros.forEach(l -> {
-//            System.out.println(l);
-//        });
-//
-//        //Modificacion de un Usuario
-//        Stream<Usuario> modU = b.getUsers().stream();
-//
-//        try {
-//                    modU
-//                    .filter(u -> u.getCorreo()
-//                            .equalsIgnoreCase("Juan@mail.com"))
-//                    .findFirst()
-//                    .orElseThrow(() -> new MiExcepcion("Usuario no encontrado"))
-//                    .setNombre("Juan Perez");
-//
-//        } catch (MiExcepcion e) {
-//            System.out.println(e.getMessage());
-//        }
+//        Autor autor2 = new Autor();
+//        autor2.setNombreAutor("Franz");
+//        autor2.setApellidoAutor("Kafka");
+//        autor2.setBiografia("escritor bohemio de lengua alemana. Su obra, tiene como temas los conflictos paternofiliales, " +
+//                "la ansiedad, el existencialismo, la brutalidad física y psicológica, la culpa," +
+//                " la filosofía del absurdo, la burocracia y las transformaciones espirituales.");
+//        cn.guardarAutorCN(autor2);
 
+        System.out.println("-----------------Lista de Autores------------------");
+        List<Autor> autores = cn.listarAutoresCN();
+        autores.forEach(au -> System.out.println(au));
+        System.out.println("----------------------------------------------------");
 
+        System.out.println("-----------------Actualizar autor--------------------");
+        Autor autorParaUPDTE = cn.obtenerAutorPorIdCN(2);
+        autorParaUPDTE.setNombreAutor("Jose Luis");
+        autorParaUPDTE.setApellidoAutor("Borges");
+        autorParaUPDTE.setBiografia("escritor, poeta, ensayista y traductor argentino, " +
+                "extensamente considerado una figura clave tanto para la literatura en español" +
+                " como para la literatura universal.");
+        cn.actualizarAutorCN(autorParaUPDTE);
+        System.out.println("---------------------Autores actualizados----------------");
+        autores.forEach(au -> System.out.println(au));
 
-
-
-
-
+        //eliminar autor
+        cn.eliminarAutorPorIdCN(5);
+        System.out.println("----------------------Lista despues de la eliminacion-----------------------");
+        List<Autor> autoresafterDelete = cn.listarAutoresCN();
+        autoresafterDelete.forEach(a -> System.out.println(a));
     }
 }

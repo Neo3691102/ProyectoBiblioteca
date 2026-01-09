@@ -2,13 +2,14 @@ package capanegocio;
 
 import capadatos.CapaDatos;
 import capadatos.UsuarioEjemplo;
+import capadatos.dtoEntidades.Autor;
 import capadatos.dtoEntidades.Usuario;
 
 import java.util.List;
 
 public class CapaNegocio {
 
-
+    //Metodos Usuario
     public List<Usuario> listarUsuariosCN(){
         CapaDatos obj = new CapaDatos();
 
@@ -33,5 +34,31 @@ public class CapaNegocio {
     public void eliminarUsuarioporIdCN(int id){
         CapaDatos cd = new CapaDatos();
         cd.eliminarUsuarioCD(id);
+    }
+
+    //Metodos Autor
+    public List<Autor> listarAutoresCN(){
+        CapaDatos cd = new CapaDatos();
+        return cd.listarAutoresCD();
+    }
+
+    public Autor obtenerAutorPorIdCN(int id){
+        CapaDatos cd = new CapaDatos();
+        return cd.obtenerAutorPorIdCD(id);
+    }
+
+    public void guardarAutorCN(Autor autor){
+        CapaDatos cd = new CapaDatos();
+        cd.guardarAutorCD(autor);
+    }
+
+    public void actualizarAutorCN(Autor autor){
+        CapaDatos cd = new CapaDatos();
+        cd.actualizarAutorCD(autor);
+    }
+
+    public void eliminarAutorPorIdCN(int id){
+        CapaDatos cd = new CapaDatos();
+        cd.eliminarAutorxIdCD(id);
     }
 }
