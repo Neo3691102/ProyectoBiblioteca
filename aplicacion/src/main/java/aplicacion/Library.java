@@ -1,6 +1,7 @@
 package aplicacion;
 
 import capadatos.dtoEntidades.Autor;
+import capadatos.dtoEntidades.Libro;
 import capadatos.dtoEntidades.Usuario;
 import capanegocio.CapaNegocio;
 
@@ -84,5 +85,39 @@ public class Library {
         System.out.println("----------------------Lista despues de la eliminacion-----------------------");
         List<Autor> autoresafterDelete = cn.listarAutoresCN();
         autoresafterDelete.forEach(a -> System.out.println(a));
+
+        //Creacion de libro
+//        Libro libro1 = new Libro();
+//        libro1.setTitulo("¡Callate y escucha!");
+//        libro1.setAutor("Tilman Fertitta");
+//        libro1.setAnioPublicacion(2015);
+//        libro1.setISBN(545646523);
+//        cn.guardarLibroCN(libro1);
+//
+//        Libro libro2 = new Libro();
+//        libro2.setTitulo("Padre rico y padre pobre");
+//        libro2.setAutor("Robert Kiyosaki");
+//        libro2.setAnioPublicacion(1992);
+//        libro2.setISBN(421687541);
+//        cn.guardarLibroCN(libro2);
+
+//        Libro libro3 = new Libro();
+//        libro3.setTitulo("El cuadrante del flujo del dinero");
+//        libro3.setAutor("Ronaldinho");
+//        libro3.setAnioPublicacion(1995);
+//        libro3.setISBN(1547894447);
+//        cn.guardarLibroCN(libro3);
+
+        //Actualizar libro
+        Libro libroparaactualizar = cn.obtenerLibroPorIdCN(3);
+        libroparaactualizar.setAutor("Robert Kiyosaki");
+        cn.actualizarLibroCN(libroparaactualizar);
+
+        //Eliminar libro
+        cn.eliminarLibroPorIdCN(1);
+
+        System.out.println("------------Lista de libros-----------");
+        List<Libro> libros = cn.listarLibrosCN();
+        libros.forEach(l -> System.out.println(l));
     }
 }
