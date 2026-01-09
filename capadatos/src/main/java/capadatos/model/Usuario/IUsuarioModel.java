@@ -1,4 +1,4 @@
-package capadatos.model;
+package capadatos.model.Usuario;
 
 import capadatos.dtoEntidades.Usuario;
 

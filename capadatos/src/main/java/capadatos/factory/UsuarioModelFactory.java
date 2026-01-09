@@ -1,7 +1,7 @@
 package capadatos.factory;
 
-import capadatos.model.IUsuarioModel;
-import capadatos.model.UsuarioModel;
+import capadatos.model.Usuario.IUsuarioModel;
+import capadatos.model.Usuario.UsuarioModel;
 import jakarta.persistence.EntityManager;
 
 public class UsuarioModelFactory {

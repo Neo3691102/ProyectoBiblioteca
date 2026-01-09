@@ -2,10 +2,9 @@ package capadatos;
 
 import capadatos.JPA.conexionJPA;
 import capadatos.dtoEntidades.Usuario;
-import capadatos.model.UsuarioModel;
 import jakarta.persistence.EntityManager;
 import capadatos.factory.UsuarioModelFactory;
-import capadatos.model.IUsuarioModel;
+import capadatos.model.Usuario.IUsuarioModel;
 
 
 import java.util.List;
