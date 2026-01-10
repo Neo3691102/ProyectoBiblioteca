@@ -12,4 +12,12 @@ dependencies{
     // JDBC Driver (elige el que uses)
     runtimeOnly 'com.mysql:mysql-connector-j:8.3.0'
     // runtimeOnly 'org.postgresql:postgresql:42.7.2'
+
+    //JUnit
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
+
+}
+
+test {
+    useJUnitPlatform()
 }

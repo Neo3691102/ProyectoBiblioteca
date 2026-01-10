@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="capadatos.CapaDatosTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-01-10T00:34:48" hostname="NESTOR" time="2.309">
+  <properties/>
+  <testcase name="guardarLibro_yObtener()" classname="capadatos.CapaDatosTest" time="2.088"/>
+  <testcase name="guardarUsuario_yObtenerPorId()" classname="capadatos.CapaDatosTest" time="0.037"/>
+  <testcase name="actualizarUsuario_modificaDatos()" classname="capadatos.CapaDatosTest" time="0.056"/>
+  <testcase name="eliminarUsuario_porId()" classname="capadatos.CapaDatosTest" time="0.048"/>
+  <testcase name="guardarAutor_yListar()" classname="capadatos.CapaDatosTest" time="0.059"/>
+  <testcase name="listarUsuarios_noDebeSerNull()" classname="capadatos.CapaDatosTest" time="0.016"/>
+  <system-out><![CDATA[Hibernate: 
+    insert 
+    into
+        libros
+        (ISBN, anioPublicacion, autor, titulo) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    select
+        l1_0.IdLibro,
+        l1_0.ISBN,
+        l1_0.anioPublicacion,
+        l1_0.autor,
+        l1_0.titulo 
+    from
+        libros l1_0 
+    where
+        l1_0.IdLibro=?
+Hibernate: 
+    delete 
+    from
+        libros
+Hibernate: 
+    delete 
+    from
+        autores
+Hibernate: 
+    delete 
+    from
+        usuarios
+Hibernate: 
+    insert 
+    into
+        usuarios
+        (correo, nombre, password) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        u1_0.idUsuario,
+        u1_0.correo,
+        u1_0.nombre,
+        u1_0.password 
+    from
+        usuarios u1_0 
+    where
+        u1_0.idUsuario=?
+Hibernate: 
+    delete 
+    from
+        libros
+Hibernate: 
+    delete 
+    from
+        autores
+Hibernate: 
+    delete 
+    from
+        usuarios
+Hibernate: 
+    insert 
+    into
+        usuarios
+        (correo, nombre, password) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        u1_0.idUsuario,
+        u1_0.correo,
+        u1_0.nombre,
+        u1_0.password 
+    from
+        usuarios u1_0 
+    where
+        u1_0.idUsuario=?
+Hibernate: 
+    update
+        usuarios 
+    set
+        correo=?,
+        nombre=?,
+        password=? 
+    where
+        idUsuario=?
+Hibernate: 
+    select
+        u1_0.idUsuario,
+        u1_0.correo,
+        u1_0.nombre,
+        u1_0.password 
+    from
+        usuarios u1_0 
+    where
+        u1_0.idUsuario=?
+Hibernate: 
+    delete 
+    from
+        libros
+Hibernate: 
+    delete 
+    from
+        autores
+Hibernate: 
+    delete 
+    from
+        usuarios
+Hibernate: 
+    insert 
+    into
+        usuarios
+        (correo, nombre, password) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        u1_0.idUsuario,
+        u1_0.correo,
+        u1_0.nombre,
+        u1_0.password 
+    from
+        usuarios u1_0 
+    where
+        u1_0.idUsuario=?
+Hibernate: 
+    delete 
+    from
+        usuarios 
+    where
+        idUsuario=?
+Hibernate: 
+    select
+        u1_0.idUsuario,
+        u1_0.correo,
+        u1_0.nombre,
+        u1_0.password 
+    from
+        usuarios u1_0 
+    where
+        u1_0.idUsuario=?
+Hibernate: 
+    delete 
+    from
+        libros
+Hibernate: 
+    delete 
+    from
+        autores
+Hibernate: 
+    delete 
+    from
+        usuarios
+Hibernate: 
+    insert 
+    into
+        autores
+        (apellidoautor, biografia, nombreautor) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        a1_0.idAutor,
+        a1_0.apellidoautor,
+        a1_0.biografia,
+        a1_0.nombreautor 
+    from
+        autores a1_0
+Hibernate: 
+    delete 
+    from
+        libros
+Hibernate: 
+    delete 
+    from
+        autores
+Hibernate: 
+    delete 
+    from
+        usuarios
+Hibernate: 
+    select
+        u1_0.idUsuario,
+        u1_0.correo,
+        u1_0.nombre,
+        u1_0.password 
+    from
+        usuarios u1_0
+Hibernate: 
+    delete 
+    from
+        libros
+Hibernate: 
+    delete 
+    from
+        autores
+Hibernate: 
+    delete 
+    from
+        usuarios
+]]></system-out>
+  <system-err><![CDATA[ene 09, 2026 6:34:48 P. M. org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+INFO: HHH000204: Processing PersistenceUnitInfo [name: coneccionLocalMySQL]
+ene 09, 2026 6:34:48 P. M. org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate ORM core version 6.4.4.Final
+ene 09, 2026 6:34:49 P. M. org.hibernate.cache.internal.RegionFactoryInitiator initiateService
+INFO: HHH000026: Second-level cache disabled
+ene 09, 2026 6:34:49 P. M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using built-in connection pool (not intended for production use)
+ene 09, 2026 6:34:49 P. M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+ene 09, 2026 6:34:49 P. M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3307/BDproyecto]
+ene 09, 2026 6:34:49 P. M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001001: Connection properties: {password=****, user=root}
+ene 09, 2026 6:34:49 P. M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001003: Autocommit mode: false
+ene 09, 2026 6:34:49 P. M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
+INFO: HHH10001115: Connection pool size: 20 (min=1)
+ene 09, 2026 6:34:49 P. M. org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl constructDialect
+WARN: HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+ene 09, 2026 6:34:49 P. M. org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl logSelectedDialect
+WARN: HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+ene 09, 2026 6:34:50 P. M. org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+ene 09, 2026 6:34:50 P. M. org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5fd8dd66] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+]]></system-err>
+</testsuite>
