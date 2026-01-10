@@ -11,6 +11,8 @@
 
         <!-- REGISTRO EXPLÍCITO DE ENTIDADES -->
         <class>capadatos.dtoEntidades.Usuario</class>
+        <class>capadatos.dtoEntidades.Autor</class>
+        <class>capadatos.dtoEntidades.Libro</class>
 
         <properties>
             <!-- JDBC -->
