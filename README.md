@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este proyecto es una **aplicación de consola en Java** que simula el funcionamiento básico de una biblioteca. Implementa una arquitectura por capas, uso de **Streams**, **colecciones**, **excepciones personalizadas**, y está **empaquetado y dockerizado** para su ejecución portable.
+Este proyecto es una **aplicación de consola en Java** que simula el funcionamiento básico de una biblioteca. Implementa una arquitectura por capas, uso de **colecciones**, **excepciones personalizadas**, y está **empaquetado y dockerizado** para su ejecución portable.
 
 El objetivo principal del proyecto es demostrar buenas prácticas de programación en Java, organización de código, y procesos básicos de build y despliegue.
 
@@ -14,7 +14,9 @@ El objetivo principal del proyecto es demostrar buenas prácticas de programaci�
 * **Gradle (multi-módulo)**
 * **Docker**
 * **Programación Orientada a Objetos (POO)**
-* **Java Streams API**
+* **JPA**
+* **Conexion a BD MySQL**
+* **Pruebas con Junit 5**
 
 ---
 
@@ -45,7 +47,6 @@ proyectobiblioteca/
 
 * Gestión de usuarios, autores y libros
 * Uso de listas y operaciones CRUD
-* Filtrado y modificación de datos mediante **Streams**
 * Excepción personalizada (`MiExcepcion`)
 * Ejecución mediante JAR ejecutable
 * Ejecución mediante contenedor Docker
