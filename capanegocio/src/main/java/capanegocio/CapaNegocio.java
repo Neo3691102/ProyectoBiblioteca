@@ -1,6 +1,7 @@
 package capanegocio;
 
 import capadatos.CapaDatos;
+import capadatos.MiExcepcion;
 import capadatos.UsuarioEjemplo;
 import capadatos.dtoEntidades.Autor;
 import capadatos.dtoEntidades.Libro;
@@ -27,8 +28,11 @@ public class CapaNegocio {
         obj.guardarUsuarioCD(usuario);
     }
 
-    public void actualizarUsuarioCN(Usuario usuario){
+    public void actualizarUsuarioCN(Usuario usuario) throws MiExcepcion {
         CapaDatos obj = new CapaDatos();
+        if(usuario == null){
+            throw new MiExcepcion("No hay ningun usuario para actualizar");
+        }
         obj.actualizarusuarioCD(usuario);
     }
 
