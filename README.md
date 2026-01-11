@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este proyecto es una **aplicación de consola en Java** que simula el funcionamiento básico de una biblioteca. Implementa una arquitectura por capas, uso de **colecciones**, **excepciones personalizadas**, y está **empaquetado y dockerizado** para su ejecución portable.
+Este proyecto es una **aplicación de consola en Java** que simula el funcionamiento básico de una biblioteca. Implementa una arquitectura por capas, uso de **colecciones**, **excepciones personalizadas**, se implementan**patrones de diseño Factory Method y Singleton**, y está **empaquetado y dockerizado** para su ejecución portable.
 
 El objetivo principal del proyecto es demostrar buenas prácticas de programación en Java, organización de código, y procesos básicos de build y despliegue.
 
@@ -45,11 +45,12 @@ proyectobiblioteca/
 
 ## Funcionalidades principales
 
-* Gestión de usuarios, autores y libros
-* Uso de listas y operaciones CRUD
+* Gestión de usuarios, autores y libros, 
+* Uso de listas y operaciones CRUD con patron Factory Method
 * Excepción personalizada (`MiExcepcion`)
 * Ejecución mediante JAR ejecutable
 * Ejecución mediante contenedor Docker
+* Conexion a base de datos MySQL usando JPA con patron Singleton
 
 ---
 
@@ -124,6 +125,7 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 * Manejo de errores con excepción personalizada
 * Build reproducible
 * Contenedorización con Docker
+* Patrones de diseño: Factory Method y Singleton
 
 ---
 
