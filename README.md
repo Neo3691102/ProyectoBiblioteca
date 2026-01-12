@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este proyecto es una **aplicación de consola en Java** que simula el funcionamiento básico de una biblioteca. Implementa una arquitectura por capas, uso de **colecciones**, **excepciones personalizadas**, se implementan**patrones de diseño Factory Method y Singleton**, y está **empaquetado y dockerizado** para su ejecución portable.
+Este proyecto es una **aplicación de consola en Java** que simula el funcionamiento básico de una biblioteca. Implementa una arquitectura por capas, uso de **colecciones**, **excepciones personalizadas**, se implementan **patrones de diseño Factory Method y Singleton**, y está **empaquetado y dockerizado** para su ejecución portable.
 
 El objetivo principal del proyecto es demostrar buenas prácticas de programación en Java, organización de código, y procesos básicos de build y despliegue.
 
