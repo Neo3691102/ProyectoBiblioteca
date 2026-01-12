@@ -22,7 +22,7 @@ El objetivo principal del proyecto es demostrar buenas prácticas de programaci�
 
 ## Arquitectura del proyecto
 
-El proyecto está organizado en módulos siguiendo una separación clara de responsabilidades:
+El proyecto esta construido en capas con patrones de diseño Singleton y Factory Method, organizado en módulos siguiendo una separación clara de responsabilidades:
 
 ```
 proyectobiblioteca/
